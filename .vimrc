@@ -90,6 +90,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'gilsondev/searchtasks.vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'majutsushi/tagbar'
+Plug 'preservim/nerdcommenter'
 " Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'scrooloose/syntastic'
@@ -99,8 +100,9 @@ Plug 'yardnsm/vim-import-cost', {'do': 'yarn install'}
 Plug 'benmills/vimux' 
 Plug 'tyewang/vimux-jest-test'
 
-" Tracking
+" Integration Services
 Plug 'wakatime/vim-wakatime'
+Plug 'ananagame/vimsence'
 
 " Markdown / Writting
 Plug 'reedes/vim-pencil'
