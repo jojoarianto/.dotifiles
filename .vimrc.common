@@ -5,7 +5,7 @@
 set nowrap
 
 " OSX stupid backspace fix
-set backspace=indent,eol,start
+" set backspace=indent,eol,start
 
 " Show linenumbers
 set number

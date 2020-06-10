@@ -2,7 +2,28 @@
 """" @ri7nz <ri7nz.labs@gmail.com> """""
 """"""""""""""""""""""""""""""""""""""""
 
+" map leader to space
+let mapleader = "\<Space>"
+nnoremap <SPACE> <Nop>
+
 set encoding=utf8
+
+" Search down into subfulder with find
+set path+=**
+" set guifont=DroidSansMono_Nerd_Font:h11
+set guifont=Hack_Nerd_Font:h11
+
+" Display all matching files when we tab complete
+set wildmenu
+
+" commenter
+let g:NERDSpaceDelims = 1
+
+" we want pretty symbol when available
+set t_CO=256
+
+" set unittest
+let g:test#php#phpunit#executable = "docker exec -w /var/www/mami53 laradock_workspace_1 ./vendor/bin/phpunit"
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -11,6 +32,30 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+
+" Convert between camel and snek case (and kebab case)
+Plug 'nicwest/vim-camelsnek'
+
+" install candid themes vim
+Plug 'flrnd/candid.vim'
+
+" vim surround
+Plug 'tpope/vim-surround'
+
+" Vim-php-namespace is a vim plugin for inserting use statements automatically
+Plug 'arnaud-lb/vim-php-namespace'
+
+" themes
+Plug 'ParamagicDev/vim-medic_chalk'
+
+" vim for comment code
+Plug 'preservim/nerdcommenter'
+
+" install for git blame
+Plug 'zivyangll/git-blame.vim'
+
+" themes nord
+Plug 'arcticicestudio/nord-vim'
 
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -105,6 +150,10 @@ Plug 'vifm/vifm.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
+
+" for multiple cursor
+""" Plug 'terryma/vim-multiple-cursors'
+
 """ 
 call plug#end()
 " essential & common configuration
@@ -130,3 +179,17 @@ source ~/.vimrc.nerdtree
 source ~/.vimrc.fun
 " EasyMotion
 source ~/.vimrc.easymotion
+
+" colorscheme nord
+set termguicolors
+set background=dark
+syntax on
+colorscheme candid
+
+"" if you use lightline
+" Lightline
+let g:lightline = { 'colorscheme': 'candid' }
+highlight LineNr guifg=grey
+
+" colorscheme medic_chalk
+" hi CursorLine   cterm=NONE ctermbg="#25533"

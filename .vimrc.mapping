@@ -11,6 +11,9 @@ inoremap <A-S-k> <Esc>:m .-2<CR>==gi
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
+" get relative path and copy to clipboard
+nnoremap <Leader>p :let @+ = expand("%")<CR>
+
 "" CTRL + P 
 map <C-p> :Files<CR>
 "" CTRL + n 
@@ -74,10 +77,16 @@ noremap <C-l> <C-w>l
 "inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 
+
 " Shortcuts
+nnoremap <Leader>b :Buffers<CR> 
 nnoremap <Leader>o :Files<CR> 
 nnoremap <Leader>O :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
+
+" Shortcuts for git blame
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+nnoremap <Leader>y :terminal<CR>
 
 " Vim-Test Mappings
 nmap <silent> <leader>t :TestNearest<CR>
@@ -104,3 +113,11 @@ map <silent> <LocalLeader>ws :highlight clear ExtraWhitespace<CR>
 "    autocmd BufEnter *.js,*.jsx,*.ts,*.tsx ImportCost
 "    autocmd CursorHold *.js,*.jsx,*.ts,*.tsx ImportCost
 " augroup END
+
+"" Requirement for https://github.com/arnaud-lb/vim-php-namespace
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
