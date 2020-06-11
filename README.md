@@ -29,6 +29,21 @@ $ ln -sf dotifiles/.vimrc* ~/
 $ ln -sf dotifiles/.config/* ~/.config
 ```
 
+# How to use (Linux Version)
+```bash
+# clone repository
+git clone https://github.com/jojoarianto/.dotifiles.git
+
+# create symlinnk
+ln -rsf ~/Documents/Project/.dotifiles/.vim* ~/
+
+# install vim-plug using curl
+
+# install rg (https://github.com/BurntSushi/ripgrep#installation)
+
+# install yarn if you dont have yarn yet
+```
+
 # Todo
 - [ ] Support auto install.
 - [ ] Self manage dependencies of `dotfiles`.
